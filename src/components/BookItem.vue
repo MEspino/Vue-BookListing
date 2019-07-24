@@ -1,7 +1,7 @@
 <template>
   <div>
       <ul>
-        <li>{{book.title}}: {{book.author}}</li>
+        <book-item v-for="book in books" :book='book'></book-item>
       </ul>
 
   </div>
@@ -10,6 +10,9 @@
 <script>
   export default {
     name: 'BookItem',
+    components: {
+      BookItem
+    },
     props: [
       'book'
     ]
